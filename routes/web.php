@@ -11,5 +11,10 @@ Route::get('/hello', function () {
 });
 
 Route::get('/nama', function () {
-    return "Hello nama saya Neo!";
+    return "Hello nama saya Neo ";
 });
+
+use App\Http\Controllers\MahasiswaController;
+
+Route::get('/mahasiswa', [MahasiswaController::class, 'index']);
+Route::post('/mahasiswa', [MahasiswaController::class, 'store']);
