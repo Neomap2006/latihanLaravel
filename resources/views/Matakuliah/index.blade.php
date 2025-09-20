@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Data Mahasiswa</title>
+    <title>Data Matakuliah</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -44,22 +44,20 @@
     </style>
 </head>
 <body>
-    <h1>Tambah Mahasiswa</h1>
-    <form method="POST" action="/mahasiswa">
+    <h1>Tambah Matakuliah</h1>
+    <form method="POST" action="/matakuliah">
         @csrf
-        <input type="text" name="nama" placeholder="Nama">
-        <input type="text" name="nim" placeholder="NIM">
-        <input type="text" name="jurusan" placeholder="Jurusan">
+        <input type="text" name="nama_matkul" placeholder="Nama Matakuliah">
+        <input type="text" name="deskripsi" placeholder="Deskripsi">
         <button type="submit">Simpan</button>
     </form>
 
-    <h2>List Mahasiswa</h2>
+<h2>List Matakuliah</h2>
 <ul>
-    @foreach($data as $mhs)
+    @foreach($data as $matkul)
         <li>
-            Nama    : {{ $mhs->nama }} <br>
-            NIM     : {{ $mhs->nim }} <br>
-            Jurusan : {{ $mhs->jurusan }}
+            Nama Matakuliah : {{ $matkul->nama_matkul }} <br>
+            Deskripsi       : {{ $matkul->deskripsi }}
         </li>
     @endforeach
 </ul>
