@@ -1,11 +1,30 @@
+# Default: normalize line endings ke LF
 * text=auto eol=lf
 
-*.blade.php diff=html
-*.css diff=css
-*.html diff=html
-*.md diff=markdown
-*.php diff=php
+# Bahasa pemrograman & template
+*.php        diff=php
+*.blade.php  diff=html
+*.css        diff=css
+*.scss       diff=css
+*.js         diff=javascript
+*.jsx        diff=javascript
+*.ts         diff=typescript
+*.tsx        diff=typescript
+*.html       diff=html
+*.json       text diff=json
+*.md         diff=markdown
+*.yml        text
+*.yaml       text
+*.xml        text
+*.ini        text
+*.env        text
+*.lock       text
+*.sh         text eol=lf
+*.bat        text eol=crlf
 
-/.github export-ignore
-CHANGELOG.md export-ignore
-.styleci.yml export-ignore
+# Jangan ikut saat archive/export
+/.github             export-ignore
+CHANGELOG.md         export-ignore
+.styleci.yml         export-ignore
+phpunit.xml          export-ignore
+/tests               export-ignore
