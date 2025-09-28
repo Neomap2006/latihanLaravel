@@ -2,19 +2,16 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Mahasiswa extends Model
 {
-    use HasFactory;
-
+    // pointing table
     protected $table = 'mahasiswa';
 
-    // Kolom yang bisa diisi mass-assignment
+    // kolom yang bisa di set by user
     protected $fillable = [
         'nama',
         'nim',
-        'jurusan',
     ];
 }

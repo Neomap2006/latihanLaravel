@@ -11,11 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('mahasiswa', function (Blueprint $table) {
-            $table->id();
-            $table->string('nama');
-            $table->string('nim');
-            $table->timestamps();
+        Schema::table('dosen', function (Blueprint $table) {
+            // tambahkan kolom nid setelah id
+            $table->string('nid', 50)->unique()->after('id');
         });
     }
 
@@ -24,6 +22,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('mahasiswa');
+        Schema::table('dosen', function (Blueprint $table) {
+            $table->dropColumn('nid');
+        });
     }
 };

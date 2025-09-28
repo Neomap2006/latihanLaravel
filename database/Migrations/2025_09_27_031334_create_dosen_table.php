@@ -6,25 +6,20 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Jalankan migration.
-     */
     public function up(): void
     {
-        Schema::create('ruangan', function (Blueprint $table) {
+        Schema::create('dosen', function (Blueprint $table) {
             $table->id();
-            $table->string('kode_ruangan', 10);
-            $table->string('nama_ruangan');
-            $table->integer('kapasitas');
+            $table->string('nid')->unique();
+            $table->string('nama');           
+            $table->string('alamat');        
+            $table->string('matakuliah');     
             $table->timestamps();
         });
     }
 
-    /**
-     * Rollback migration.
-     */
     public function down(): void
     {
-        Schema::dropIfExists('ruangan');
+        Schema::dropIfExists('dosen');
     }
 };
