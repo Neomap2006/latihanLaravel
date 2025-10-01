@@ -14,14 +14,14 @@
 
                     <div class="mb-4">
                         <label class="block text-white">Nama Matakuliah</label>
-                        <input type="text" name="nama_matkul" 
+                        <input type="text" name="nama_matkul"
                             value="{{ old('nama_matkul', $matkul->nama_matkul) }}"
                             class="border rounded w-full px-3 py-2 text-black">
                     </div>
 
                     <div class="mb-4">
                         <label class="block text-white">Deskripsi</label>
-                        <input type="text" name="deskripsi" 
+                        <input type="text" name="deskripsi"
                             value="{{ old('deskripsi', $matkul->deskripsi) }}"
                             class="border rounded w-full px-3 py-2 text-black">
                     </div>
@@ -29,7 +29,7 @@
                     <div class="flex justify-between">
                         <a href="{{ route('matakuliah.index') }}"
                         class="px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-700">
-                            Batal
+                            Cancel
                         </a>
 
                         <button type="submit"
@@ -37,7 +37,7 @@
                             style="background-color: #87898bff !important; color: white !important;">
                             Update
                         </button>
-                    </div>    
+                    </div>
                 </form>
             </div>
         </div>

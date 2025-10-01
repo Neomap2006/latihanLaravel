@@ -23,9 +23,9 @@ Route::middleware('auth')->group(function () {
 
     // Resource routes
     Route::resource('mahasiswa', MahasiswaController::class);
-    Route::resource('ruangan', RuanganController::class);
-    Route::resource('matakuliah', MatakuliahController::class);
     Route::resource('dosen', DosenController::class);
+    Route::resource('matakuliah', MatakuliahController::class);
+    Route::resource('ruangan', RuanganController::class);
 });
 
 require __DIR__.'/auth.php';

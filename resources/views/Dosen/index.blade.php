@@ -46,12 +46,10 @@
                     </form>
                 </div>
             </div>
-
             {{-- List Dosen --}}
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <h3 class="font-semibold text-lg mb-4">List Dosen</h3>
-
                     <table class="table-auto w-full border border-gray-300">
                         <thead class="bg-gray-200 text-gray-700">
                             <tr>
@@ -77,7 +75,6 @@
                                             style="background-color: #0b69f5ff !important; color: white !important;">
                                             Edit
                                         </a>
-
                                         <form action="{{ route('dosen.destroy', $dosen->id) }}"
                                             method="POST" class="inline-block">
                                             @csrf
@@ -98,10 +95,8 @@
                             @endforelse
                         </tbody>
                     </table>
-
                 </div>
             </div>
-
         </div>
     </div>
 </x-app-layout>

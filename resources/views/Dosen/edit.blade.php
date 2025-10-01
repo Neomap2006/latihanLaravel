@@ -39,7 +39,7 @@
                     <div class="flex justify-between">
                         <a href="{{ route('dosen.index') }}"
                         class="px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-700">
-                            Batal
+                            Cancel
                         </a>
 
                         <button type="submit"
@@ -47,7 +47,7 @@
                             style="background-color: #87898bff !important; color: white !important;">
                             Update
                         </button>
-                    </div>    
+                    </div>
                 </form>
             </div>
         </div>

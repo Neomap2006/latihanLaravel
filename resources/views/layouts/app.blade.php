@@ -18,24 +18,27 @@
                     <a href="{{ route('dashboard') }}"
                         class="block px-4 py-2 rounded hover:bg-gray-200 {{ request()->routeIs('dashboard') ? 'bg-gray-200 font-semibold' : '' }}">
                         Dashboard
-                    </a> 
+                    </a>
                     <a href="{{ route('mahasiswa.index') }}"
                         class="block px-4 py-2 rounded hover:bg-gray-200 {{ request()->routeIs('mahasiswa.*') ? 'bg-gray-200 font-semibold' : '' }}">
                         Mahasiswa
                     </a>
-                    <a href="{{ route('ruangan.index') }}"
-                        class="block px-4 py-2 rounded hover:bg-gray-200 {{ request()->routeIs('ruangan.*') ? 'bg-gray-200 font-semibold' : '' }}">
-                        Ruangan
-                    </a>
+
                     <a href="{{ route('dosen.index') }}"
                         class="block px-4 py-2 rounded hover:bg-gray-200 {{ request()->routeIs('dosen.*') ? 'bg-gray-200 font-semibold' : '' }}">
                         Dosen
                     </a>
+
                     <a href="{{ route('matakuliah.index') }}"
                         class="block px-4 py-2 rounded hover:bg-gray-200 {{ request()->routeIs('dosen.*') ? 'bg-gray-200 font-semibold' : '' }}">
                         Matakuliah
                     </a>
-                </nav> 
+
+                    <a href="{{ route('ruangan.index') }}"
+                        class="block px-4 py-2 rounded hover:bg-gray-200 {{ request()->routeIs('ruangan.*') ? 'bg-gray-200 font-semibold' : '' }}">
+                        Ruangan
+                    </a>
+                </nav>
             </aside>
 
             {{-- KONTEN UTAMA di kanan --}}
@@ -43,7 +46,7 @@
                 {{ $slot ?? '' }}
                 @yield('content')
             </main>
-        </div> 
+        </div>
     </div>
 </body>
 </html>

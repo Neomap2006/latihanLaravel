@@ -36,7 +36,7 @@
                         <input type="text" name="nama_ruangan"
                             value="{{ old('nama_ruangan', $ruangan->nama_ruangan) }}"
                             class="border rounded w-full px-3 py-2 text-black">
-                            
+
                         @error('nama_ruangan')
                             <p class="text-red-500 text-sm">{{ $message }}</p>
                         @enderror
@@ -55,7 +55,7 @@
                     <div class="flex justify-between">
                         <a href="{{ route('ruangan.index') }}"
                         class="px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-700">
-                            Batal
+                        Cancel
                         </a>
                         <button type="submit"
                             class="px-4 py-2 rounded"
