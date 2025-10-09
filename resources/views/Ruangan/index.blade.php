@@ -4,19 +4,21 @@
             {{ __('Data Ruangan') }}
         </h2>
     </x-slot>
+
+    {{-- Notifikasi sukses --}}
+    @if(session('success'))
+        <div class="mb-4 p-3 bg-green-100 text-green-800 rounded">
+            {{ session('success') }}
+        </div>
+        @endif
+
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+
             {{-- Form Tambah Ruangan --}}
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg mb-6">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <h3 class="font-semibold text-lg mb-4">Tambah Ruangan</h3>
-
-                    {{-- Notifikasi sukses --}}
-                    @if(session('success'))
-                        <div class="mb-4 p-3 bg-green-100 text-green-800 rounded">
-                            {{ session('success') }}
-                        </div>
-                    @endif
 
                     <form method="POST" action="{{ route('ruangan.store') }}">
                         @csrf
@@ -28,7 +30,8 @@
                             class="border-gray-300 rounded-md w-full mb-3 p-2"
                             style="color: black;" required>
 
-                        <input type="text" name="kapasitas" placeholder="Kapasitas"
+                        {{-- kapasitas angka saja --}}
+                        <input type="number" name="kapasitas" placeholder="Kapasitas (isi angka saja)"
                             class="border-gray-300 rounded-md w-full mb-3 p-2"
                             style="color: black;" required>
 
@@ -62,7 +65,7 @@
                                     <td class="border px-4 py-2 text-center">{{ $loop->iteration }}</td>
                                     <td class="border px-4 py-2">{{ $ruangan->kode_ruangan }}</td>
                                     <td class="border px-4 py-2">{{ $ruangan->nama_ruangan }}</td>
-                                    <td class="border px-4 py-2">{{ $ruangan->kapasitas }}</td>
+                                    <td class="border px-4 py-2">{{ $ruangan->kapasitas }} orang</td>
                                     <td class="border px-4 py-2 text-center space-x-2">
                                         <a href="{{ route('ruangan.edit', $ruangan->id) }}"
                                         class="inline-block px-3 py-1 rounded"

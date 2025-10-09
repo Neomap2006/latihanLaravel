@@ -5,6 +5,13 @@
         </h2>
     </x-slot>
 
+    {{-- Notifikasi sukses --}}
+    @if(session('success'))
+        <div class="mb-4 p-3 bg-green-100 text-green-800 rounded">
+            {{ session('success') }}
+        </div>
+    @endif
+
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
 
@@ -12,13 +19,6 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg mb-6">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <h3 class="font-semibold text-lg mb-4">Tambah Dosen</h3>
-
-                    {{-- Notifikasi sukses --}}
-                    @if(session('success'))
-                        <div class="mb-4 p-3 bg-green-100 text-green-800 rounded">
-                            {{ session('success') }}
-                        </div>
-                    @endif
 
                     <form method="POST" action="{{ route('dosen.store') }}">
                         @csrf
@@ -39,17 +39,19 @@
                             style="color: black;" required>
 
                         <button type="submit"
-                            class="px-4 py-2 rounded"
-                            style="background-color: #87898bff !important; color: white !important;">
+                                class="px-4 py-2 rounded"
+                                style="background-color: #87898bff !important; color: white !important;">
                             Simpan
                         </button>
                     </form>
                 </div>
             </div>
+
             {{-- List Dosen --}}
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <h3 class="font-semibold text-lg mb-4">List Dosen</h3>
+
                     <table class="table-auto w-full border border-gray-300">
                         <thead class="bg-gray-200 text-gray-700">
                             <tr>
@@ -71,8 +73,8 @@
                                     <td class="border px-4 py-2">{{ $dosen->matakuliah }}</td>
                                     <td class="border px-4 py-2 text-center space-x-2">
                                         <a href="{{ route('dosen.edit', $dosen->id) }}"
-                                            class="inline-block px-3 py-1 rounded"
-                                            style="background-color: #0b69f5ff !important; color: white !important;">
+                                        class="inline-block px-3 py-1 rounded"
+                                        style="background-color: #0b69f5ff !important; color: white !important;">
                                             Edit
                                         </a>
                                         <form action="{{ route('dosen.destroy', $dosen->id) }}"
@@ -80,9 +82,9 @@
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit"
-                                                onclick="return confirm('Hapus data dosen ini?')"
-                                                class="px-3 py-1 rounded"
-                                                style="background-color: #dc2626 !important; color: white !important;">
+                                                    onclick="return confirm('Hapus data dosen ini?')"
+                                                    class="px-3 py-1 rounded"
+                                                    style="background-color: #dc2626 !important; color: white !important;">
                                                 Delete
                                             </button>
                                         </form>
@@ -90,13 +92,16 @@
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="6" class="text-center border px-4 py-2">Belum ada data dosen.</td>
+                                    <td colspan="6" class="text-center border px-4 py-2">
+                                        Belum ada data dosen.
+                                    </td>
                                 </tr>
                             @endforelse
                         </tbody>
                     </table>
                 </div>
             </div>
+
         </div>
     </div>
 </x-app-layout>

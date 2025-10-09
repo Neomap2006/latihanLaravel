@@ -17,10 +17,12 @@ class MatakuliahController extends Controller
     {
         $request->validate([
             'nama_matkul' => 'required|string|max:255',
-            'deskripsi' => 'required|string',
+            'kode'        => 'required|string|max:50|unique:matakuliah,kode',
+            'sks'         => 'required|integer|min:1',
+            'deskripsi'   => 'required|string',
         ]);
 
-        Matakuliah::create($request->only('nama_matkul', 'deskripsi'));
+        Matakuliah::create($request->only('nama_matkul', 'kode', 'sks', 'deskripsi'));
 
         return redirect()->route('matakuliah.index')->with('success', 'Data berhasil ditambahkan');
     }
@@ -35,11 +37,13 @@ class MatakuliahController extends Controller
     {
         $request->validate([
             'nama_matkul' => 'required|string|max:255',
-            'deskripsi' => 'required|string',
+            'kode'        => 'required|string|max:50|unique:matakuliah,kode,' . $id,
+            'sks'         => 'required|integer|min:1',
+            'deskripsi'   => 'required|string',
         ]);
 
         $matkul = Matakuliah::findOrFail($id);
-        $matkul->update($request->only('nama_matkul', 'deskripsi'));
+        $matkul->update($request->only('nama_matkul', 'kode', 'sks', 'deskripsi'));
 
         return redirect()->route('matakuliah.index')->with('success', 'Data berhasil diperbarui');
     }

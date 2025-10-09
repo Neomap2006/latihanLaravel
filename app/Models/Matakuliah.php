@@ -5,7 +5,6 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-
 class Matakuliah extends Model
 {
     use HasFactory;
@@ -15,7 +14,8 @@ class Matakuliah extends Model
     // Kolom yang bisa diisi mass-assignment
     protected $fillable = [
         'nama_matkul',
+        'kode',
+        'sks',
         'deskripsi',
     ];
 }
-

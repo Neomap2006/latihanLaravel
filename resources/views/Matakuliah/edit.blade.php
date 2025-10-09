@@ -16,14 +16,28 @@
                         <label class="block text-white">Nama Matakuliah</label>
                         <input type="text" name="nama_matkul"
                             value="{{ old('nama_matkul', $matkul->nama_matkul) }}"
-                            class="border rounded w-full px-3 py-2 text-black">
+                            class="border rounded w-full px-3 py-2 text-black" required>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="block text-white">Kode Matakuliah</label>
+                        <input type="text" name="kode"
+                            value="{{ old('kode', $matkul->kode) }}"
+                            class="border rounded w-full px-3 py-2 text-black" required>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="block text-white">Jumlah SKS</label>
+                        <input type="number" name="sks"
+                            value="{{ old('sks', $matkul->sks) }}"
+                            class="border rounded w-full px-3 py-2 text-black" required>
                     </div>
 
                     <div class="mb-4">
                         <label class="block text-white">Deskripsi</label>
                         <input type="text" name="deskripsi"
                             value="{{ old('deskripsi', $matkul->deskripsi) }}"
-                            class="border rounded w-full px-3 py-2 text-black">
+                            class="border rounded w-full px-3 py-2 text-black" required>
                     </div>
 
                     <div class="flex justify-between">
